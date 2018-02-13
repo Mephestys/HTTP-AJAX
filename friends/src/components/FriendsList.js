@@ -34,11 +34,11 @@ class FriendsList extends Component {
 
   removeFriend = id => {
     axios
-    .delete('http://localhost:5000/friends/' + id)
-    .then(response => {
-      console.log(response);
-      this.getFriends();
-    })
+    .delete(`http://localhost:5000/friends/${id}`)
+    .then(response => {this.getFriends()})
+    .catch(() => {
+      console.error('Error getting data.')
+    });
   }
 
   render() {
