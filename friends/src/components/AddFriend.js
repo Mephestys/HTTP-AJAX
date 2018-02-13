@@ -26,6 +26,7 @@ class AddFriend extends React.Component {
       .catch(error => {
         console.log('Error: ', error);
       });
+      this.setState({ name: '', age: '', email: '',})
   };
 
   render() {
